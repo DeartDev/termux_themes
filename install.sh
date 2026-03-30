@@ -21,7 +21,7 @@ CYAN='\033[0;36m'
 RESET='\033[0m'
 BOLD='\033[1m'
 
-ok()   { echo -e "  ${GREEN}✔${RESET}  $*"; }
+ok() { echo -e "  ${GREEN}✔${RESET}  $*"; }
 info() { echo -e "  ${CYAN}→${RESET}  $*"; }
 warn() { echo -e "  ${YELLOW}!${RESET}  $*"; }
 
@@ -49,15 +49,15 @@ ok "theme.sh instalado"
 # 4. Actualizar .zshrc (idempotente) ───────────────────────
 info "Verificando ${ZSHRC}..."
 if [[ ! -f "${ZSHRC}" ]]; then
-    touch "${ZSHRC}"
-    warn ".zshrc no existía, se creó uno nuevo"
+  touch "${ZSHRC}"
+  warn ".zshrc no existía, se creó uno nuevo"
 fi
 
 if grep -qF "${SOURCE_LINE}" "${ZSHRC}" 2>/dev/null; then
-    ok ".zshrc ya contiene la línea de source (sin cambios)"
+  ok ".zshrc ya contiene la línea de source (sin cambios)"
 else
-    printf '\n# Termux Theme Switcher\n%s\n' "${SOURCE_LINE}" >> "${ZSHRC}"
-    ok "Línea de source agregada a .zshrc"
+  printf '\n# Termux Theme Switcher\n%s\n' "${SOURCE_LINE}" >>"${ZSHRC}"
+  ok "Línea de source agregada a .zshrc"
 fi
 
 # 5. Resumen ───────────────────────────────────────────────
@@ -74,7 +74,8 @@ echo ""
 echo "  ── Aliases rápidos ───────────────────────────"
 echo "  tdark   tlight   tocean   tsky"
 echo "  tmocha  tlatte   tforest  tmeadow"
-echo "  thati   tskoll"
+echo "  thati   tskoll   tpokedark tpokelight"
+echo "  tcharizard  tshiny  tmega_x tmega_y"
 echo ""
 echo "  ── Pares de temas ────────────────────────────"
 echo "  dark/light    →  Zinc (por defecto)"
@@ -82,4 +83,7 @@ echo "  ocean/sky     →  Océano / Cielo"
 echo "  mocha/latte   →  Catppuccin"
 echo "  forest/meadow →  Bosque / Pradera"
 echo "  hati/skoll    →  Mitología Nórdica"
+echo "  pokedark/pokelight  -> Pokemon"
+echo "  charizard/shiny  -> Charizard"
+echo "  MegaX/Y -> Mega Charizard"
 echo ""
