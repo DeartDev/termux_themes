@@ -1,6 +1,6 @@
 # Termux Theme Switcher
 
-Colección de 10 temas para Termux organizados en 5 pares dark/light, con un comando unificado `theme` y aliases rápidos. La función se carga desde un archivo dedicado (`~/.termux/theme.sh`) manteniendo `.zshrc` limpio.
+Colección de **16 temas** para Termux organizados en 8 pares dark/light, con un comando unificado `theme` y aliases rápidos. La función se carga desde un archivo dedicado (`~/.termux/theme.sh`) manteniendo `.zshrc` limpio.
 
 ---
 
@@ -16,7 +16,7 @@ El instalador es **idempotente**: ejecutarlo múltiples veces no duplica entrada
 ### Qué hace `install.sh`
 
 1. Crea `~/.termux/themes/` si no existe
-2. Copia los 10 archivos `.properties` a `~/.termux/themes/`
+2. Copia los 16 archivos `.properties` a `~/.termux/themes/`
 3. Instala `~/.termux/theme.sh` con la función y los aliases
 4. Agrega **una sola línea** a `~/.zshrc`:
    ```bash
@@ -50,6 +50,12 @@ theme              # Muestra la ayuda
 | `tmeadow` | `theme meadow` |
 | `thati` | `theme hati` |
 | `tskoll` | `theme skoll` |
+| `tpokedark` | `theme pokedark` |
+| `tpokelight` | `theme pokelight` |
+| `tcharizard` | `theme charizard` |
+| `tshiny` | `theme charizard_shiny` |
+| `tmega_x` | `theme mega_charizard_x` |
+| `tmega_y` | `theme mega_charizard_y` |
 
 ---
 
@@ -127,6 +133,47 @@ Entre las sombras del bosque y la luz de la pradera.
 
 ---
 
+### Par 6 — Pokedark / Pokelight (Pokemon)
+
+Colores inspirados en la marca Pokemon.
+
+| | `pokedark` | `pokelight` |
+|---|---|---|
+| Background | `#0b0f1a` | `#f6f8ff` |
+| Foreground | `#e6ecff` | `#1a1f2e` |
+| Cursor | `#ffd84d` | `#2a75bb` |
+
+`pokedark` — noche profunda con acentos rojo/amarillo Pokemon.  
+`pokelight` — fondo claro con identidad de marca equilibrada.
+
+---
+
+### Par 7 — Charizard / Charizard Shiny (Pokemon)
+
+| | `charizard` | `charizard_shiny` |
+|---|---|---|
+| Background | `#0f0b0a` | `#050607` |
+| Foreground | `#ffe8d6` | `#e8eef2` |
+| Cursor | `#ff6a00` | `#ff3b1f` |
+
+`charizard` — fuego ardiente y alas en noche oscura.  
+`charizard_shiny` — carbón oscuro con llamas intensas.
+
+---
+
+### Par 8 — Mega Charizard X / Mega Charizard Y (Pokemon)
+
+| | `mega_charizard_x` | `mega_charizard_y` |
+|---|---|---|
+| Background | `#05080a` | `#fff4e6` |
+| Foreground | `#e6f1ff` | `#2b1a12` |
+| Cursor | `#00b4ff` | `#ff6a00` |
+
+`mega_charizard_x` — fuego dracónico azul y núcleo volcánico.  
+`mega_charizard_y` — fuego solar desbordante con dorado brillante.
+
+---
+
 ## Estructura del repositorio
 
 ```
@@ -141,7 +188,13 @@ termux_themes/
 │   ├── forest.properties
 │   ├── meadow.properties
 │   ├── hati.properties
-│   └── skoll.properties
+│   ├── skoll.properties
+│   ├── pokedark.properties
+│   ├── pokelight.properties
+│   ├── charizard.properties
+│   ├── charizard_shiny.properties
+│   ├── mega_charizard_x.properties
+│   └── mega_charizard_y.properties
 ├── theme.sh        # Función theme() y aliases
 ├── install.sh      # Instalador idempotente
 └── README.md
